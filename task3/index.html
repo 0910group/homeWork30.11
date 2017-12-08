@@ -1,1 +1,57 @@
-﻿
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 1</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="skeleton.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+
+        <div class="seven columns">
+            <form>
+                <div>
+                    <label for="bufferVal">Поле для ввода значений в буфер: </label>
+                    <textarea id="bufferVal" class="u-full-width"></textarea>
+                </div>
+
+                <div>
+                    <input type="button" id="addBuffer" value="Add Buffer"  placeholder="Type the buffer value"/>
+                    <input type="button" id="clearBuffer" value="Clear Buffer" />
+                    <input type="button" id="showBuffer" class="button-primary" value="Show Buffer" />
+                </div>
+            </form>
+
+            <div class="row">
+                <hr class="u-full-width"/>
+            </div>
+
+            <div id="result"></div>
+        </div>
+
+        <div class="five columns sorting">
+            <form>
+                <label for="sorting">Выбор поля сортировки: </label>
+                <select id="sorting">
+                    <option value="name">По имени</option>
+                    <option value="surname">По фамилии</option>
+                    <option value="age">По возрасту</option>
+                </select>
+
+                <input type="submit" id="submitSort" class="button-primary" value="Поехали!">
+            </form>
+
+            <div id="result2"></div>
+        </div>
+
+    </div>
+
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
