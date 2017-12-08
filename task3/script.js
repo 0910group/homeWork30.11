@@ -41,13 +41,6 @@ myLib = (function () {
             };
         },
 
-        /*name: function () {
-            var select, value;
-            select = document.getElementById("sorting"); // Выбираем  select по id
-            value = select.options[select.selectedIndex].value; // Значение value для выбранного option
-            return value;
-        },*/
-
         byField: function (field) {
             return function (a, b) {
                 return a[field] > b[field] ? 1 : -1;
@@ -57,7 +50,27 @@ myLib = (function () {
 })();
 
 buffer =  myLib.makeBuffer();
+//console.log(users.sort(myLib.byField('age')));
 
-console.log(users.sort(myLib.byField('surname')));
+document.getElementById('submitSort').onclick = function () {
+    var i, key;
 
+    getValue = function () {
+        var select, value;
+        select = document.getElementById("sorting"); // Выбираем  select по id
+        value = select.options[select.selectedIndex].value;
+        return value;
+    };
 
+    users.sort(myLib.byField(getValue()));
+    document.getElementById('result2').innerHTML = '';
+
+    for(i = 0; i < users.length; i++) {
+
+        for (key in users[i]) {
+            document.getElementById('result2').innerHTML += users[i][key] + ' ';
+        }
+
+        document.getElementById('result2').innerHTML += '<br />';
+    }
+};

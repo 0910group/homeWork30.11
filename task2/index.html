@@ -3,23 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Task 2</title>
+    <link rel="stylesheet" href="../task2/normalize.css">
+    <link rel="stylesheet" href="../task2/skeleton.css">
 </head>
 <body>
-<main>
-    <!-- Форма для выбора поля, по которому будет проходить сортировка -->
-    <form action="" method="" class="typeOfSort">
-        <input type="radio" name="sort" id="name"><label for="name">Сортировать по имени</label><br />
-        <input type="radio" name="sort" id="surname"><label for="surname">Сортировать по фамилии</label><br />
-        <input type="radio" name="sort" id="age"><label for="age">Сортировать по возрасту</label><br />
+<div class="container">
 
-        <input type="submit" value="Поехали!">
+    <form>
+        <div class="row">
+            <label for="sorting">Выбор поля сортировки: </label>
+            <select id="sorting">
+                <option value="name">По имени</option>
+                <option value="surname">По фамилии</option>
+                <option value="age">По возрасту</option>
+            </select>
+
+            <input type="button" id="submitSort" class="button-primary" value="Поехали!">
+        </div>
     </form>
 
-    <div class="result">
-        <!-- Туточки выводятся результаты. <p> чисто для примера -->
-        <p>Some results here</p>
-    </div>
-</main>
+<div id="result"></div>
+</div>
+
+<script src="task2.js"></script>
 </body>
 </html>
 

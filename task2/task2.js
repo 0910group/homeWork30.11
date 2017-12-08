@@ -20,5 +20,25 @@ function byField(field) {
     }
 }
 
-users.sort(byField('name')); 
-users.sort(byField('age')); 
+document.getElementById('submitSort').onclick = function () {
+	var i, key;
+
+	getValue = function () {
+        var select, value;
+        select = document.getElementById("sorting"); // Выбираем  select по id
+        value = select.options[select.selectedIndex].value;
+        return value;
+    };
+
+    users.sort(byField(getValue()));
+    document.getElementById('result').innerHTML = '';
+
+	for(i = 0; i < users.length; i++) {
+
+		for (key in users[i]) {
+            document.getElementById('result').innerHTML += users[i][key] + ' ';
+        }
+
+        document.getElementById('result').innerHTML += '<br />';
+	}
+};
