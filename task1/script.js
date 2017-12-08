@@ -1,27 +1,27 @@
 function makeBuffer() {
 
-//Устанавливаем переменные
+    //Set up variables
+    var buffer = '';
 
-    var bufferValue = '',
-        buffer;
+    document.getElementById('addBuffer').onclick = function() {
+        buffer += document.getElementById("bufferVal").value;
+        buffer += "<br />";
+        document.getElementById("bufferVal").value = '';
+    };
 
-/*
-Arguments - это псевдомассив, объект. Ключи - числовые, их значение и length
-Если arguments пустой, возвращаем значения буфера; нет - добавляем к буферу данные через конкатенацию
-*/
+    document.getElementById('showBuffer').onclick = function() {
 
-    buffer = function (argument) {
-
-        if(arguments.length === 0) {
-            return bufferValue;
+        if (buffer.length === 0) {
+            document.getElementById('result').innerHTML = 'Буфер пуст!';
+        } else {
+            document.getElementById('result').innerHTML = buffer;
         }
-
-        bufferValue += argument;
     };
 
-    buffer.clear = function () {
-        bufferValue = '';
+    document.getElementById('clearBuffer').onclick = function() {
+        buffer = '';
+        document.getElementById('result').innerHTML = buffer;
     };
-
-    return buffer;
 }
+
+var buffer = makeBuffer();

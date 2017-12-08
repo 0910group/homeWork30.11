@@ -1,1 +1,35 @@
-﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 1</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="skeleton.css">
+</head>
+<body>
+
+<div class="container">
+
+    <form>
+        <div class="row">
+            <label for="bufferVal">Поле для ввода значений в буфер: </label>
+            <textarea id="bufferVal" class="u-full-width"></textarea>
+        </div>
+
+        <div class="row">
+            <input type="button" id="addBuffer" value="Add Buffer"  placeholder="Type the buffer value"/>
+            <input type="button" id="clearBuffer" value="Clear Buffer" />
+            <input type="button" id="showBuffer" class="button-primary" value="Show Buffer" />
+        </div>
+    </form>
+
+    <div class="row">
+        <hr class="u-full-width"/>
+    </div>
+
+    <div class="row" id="result"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
