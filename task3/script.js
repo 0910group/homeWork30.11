@@ -50,22 +50,25 @@ myLib = (function () {
 })();
 
 buffer =  myLib.makeBuffer();
-//console.log(users.sort(myLib.byField('age')));
 
-document.getElementById('submitSort').onclick = function () {
+document.getElementById('submitSort').addEventListener("click", outputResult);
+
+function outputResult() {
     var i, key;
 
-    getValue = function () {
+    getValue = function() {
         var select, value;
+
         select = document.getElementById("sorting"); // Выбираем  select по id
         value = select.options[select.selectedIndex].value;
+
         return value;
     };
 
     users.sort(myLib.byField(getValue()));
     document.getElementById('result2').innerHTML = '';
 
-    for(i = 0; i < users.length; i++) {
+    for (i = 0; i < users.length; i++) {
 
         for (key in users[i]) {
             document.getElementById('result2').innerHTML += users[i][key] + ' ';
